@@ -33,19 +33,6 @@ class tree {
 		
 		return $data;
 	}
-
-	/**
-	 * @return type
-	 */
-	public function getIesmaiListCount() {
-		$query = "  SELECT COUNT(`{$this->iesmu_lentele}`.`id_Iesmas`) as `kiekis`
-					FROM `{$this->iesmu_lentele}`
-						LEFT JOIN `{$this->keliu_lentele}`
-							ON `{$this->iesmu_lentele}`.`fk_Keliasid_Kelias`=`{$this->keliu_lentele}`.`id_Kelias`";
-		$data = mysql::select($query);
-		
-		return $data[0]['kiekis'];
-	}
 	
 	/**
 	 * Modelio atnaujinimas
